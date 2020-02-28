@@ -4,13 +4,14 @@ import { Chart } from "chart.js";
 const ScoreBar = props => {
   let ScoreBarRef = createRef();
   console.log(...props.score);
+  console.log(props.yLabel);
   useEffect(() => {
     let ctx = ScoreBarRef.current.getContext("2d");
 
     new Chart(ctx, {
       type: "line",
       data: {
-        labels: ["Running", "Swimming", "BasketBall", "Chess", "Cycling"],
+        labels: [...props.yLabel],
         datasets: [
           {
             label: "No of Hours Spent for a Week",

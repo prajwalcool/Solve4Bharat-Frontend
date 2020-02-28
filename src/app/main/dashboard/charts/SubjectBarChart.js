@@ -66,16 +66,11 @@ const ScoreBar = props => {
     new Chart(ctx, {
       type: "horizontalBar",
       data: {
-        labels: [
-          "Communication",
-          "Comprehension",
-          "Vocabulary",
-          "General Knowledge"
-        ],
+        labels: [...props.ylabel],
         datasets: [
           {
             label: "Score",
-            data: [props.score, 58, 85, 42],
+            data: [...props.score],
             backgroundColor: "#08FFC8",
             borderColor: "rgba(255, 255, 255, 0.5)",
             barThickness: "flex",
