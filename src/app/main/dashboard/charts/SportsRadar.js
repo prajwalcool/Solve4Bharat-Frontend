@@ -15,7 +15,7 @@ const ScoreBar = props => {
           {
             label: "No of Hours Spent for a Week",
             data: [...props.score],
-            backgroundColor: "#b3ffe6",
+            backgroundColor: "rgba(8,256,132,0.2)",
             borderColor: "#08FFC8",
             pointBackgroundColor: "#222",
 

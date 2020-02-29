@@ -71,12 +71,13 @@ const ScoreBar = props => {
           {
             label: "Score",
             data: [...props.score],
-            backgroundColor: "#08FFC8",
-            borderColor: "rgba(255, 255, 255, 0.5)",
+            backgroundColor: "rgba(8,256,132,0.2)",
+            borderColor: "#08FFC8",
+            borderWidth: 4,
             barThickness: "flex",
             fill: "#ccc",
-            stack: "Background",
-            barPercentage: 0.4
+            stack: "Background"
+            // barPercentage: 0.4
           }
           // {
           //   label: "Background",

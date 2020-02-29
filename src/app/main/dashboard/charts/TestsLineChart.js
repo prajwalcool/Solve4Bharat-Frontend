@@ -3,7 +3,7 @@ import { Chart } from "chart.js";
 
 const ScoreBar = props => {
   let ScoreBarRef = createRef();
-  console.log(...props.score);
+  console.log(props.score);
   console.log(props.yLabel);
   useEffect(() => {
     let ctx = ScoreBarRef.current.getContext("2d");
@@ -14,9 +14,9 @@ const ScoreBar = props => {
         labels: [...props.yLabel],
         datasets: [
           {
-            label: "No of Hours Spent for a Week",
+            label: "SUbject Scores in the tests",
             data: [...props.score],
-            backgroundColor: "#b3ffe6",
+            backgroundColor: "rgba(8,256,132,0.2)",
             borderColor: "#08FFC8",
             pointBackgroundColor: "#222"
             // barThickness: "flex",
@@ -24,37 +24,19 @@ const ScoreBar = props => {
             // stack: "background"
           }
         ]
+      },
+      options: {
+        scales: {
+          xAxes: [
+            {
+              display: true,
+              stacked: false,
+              ticks: { min: 0, max: 100, beginAtZero: true }
+            }
+          ],
+          yAxes: [{ display: true, ticks: { beginAtZero: true } }]
+        }
       }
-      //   options: {
-      //     scales: {
-      //       xAxes: [
-      //         {
-      //           display: true,
-      //           stacked: false,
-      //           ticks: { min: 0, max: 100, beginAtZero: true }
-      //         }
-      //       ],
-      //       yAxes: [
-      //         { display: true, stacked: true, ticks: { beginAtZero: true } }
-      //       ]
-      //     },
-      //     aspectRatio: 3,
-      //     // chartArea: { backgroundColor: "#ccc" },
-      //     title: { display: false },
-      //     legend: { display: false },
-      //     tooltips: {
-      //       filter: function(tooltipItem, data) {
-      //         var label = data.labels[tooltipItem.index];
-      //         console.log(tooltipItem, data, label);
-      //         if (tooltipItem.ylabel == "Background") {
-      //           return false;
-      //         } else {
-      //           return true;
-      //         }
-      //       }
-      //     }
-      //     // responsive: true
-      //   }
     });
   });
 
